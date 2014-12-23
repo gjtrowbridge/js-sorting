@@ -14,7 +14,11 @@ var insertionSort = function(toSort, comparisonFn) {
   if (typeof toSort === 'string') {
     convertBackToString = true;
     toSort = toSort.split('');
-  } else if (!Array.isArray(toSort)) {
+  } else if (Array.isArray(toSort)) {
+    // Makes a copy of the array to avoid modifying
+    // the original
+    toSort = toSort.slice();
+  } else {
     throw('Argument is not suitable for sorting!');
   }
 
