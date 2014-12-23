@@ -5,7 +5,7 @@ var insertionSort = function(toSort, comparisonFn) {
   // Sets a default comparison operator if one is not set
   comparisonFn = comparisonFn || function(a, b) {
     return a > b;
-  }
+  };
 
   // Checks if item is either a string or array
   // If string, converts to array and remembers
@@ -14,7 +14,7 @@ var insertionSort = function(toSort, comparisonFn) {
   if (typeof toSort === 'string') {
     convertBackToString = true;
     toSort = toSort.split('');
-  } else if (typeof toSort !== 'array') {
+  } else if (!Array.isArray(toSort)) {
     throw('Argument is not suitable for sorting!');
   }
 
@@ -41,4 +41,3 @@ var insertionSort = function(toSort, comparisonFn) {
   return toSort;
 };
 
-console.log(insertionSort('cabdfgdsfbdsb'));
