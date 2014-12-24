@@ -4,6 +4,16 @@ var sortFns = [
     name: 'insertionSort',
     fn: insertionSort,
     stable: true
+  },
+  {
+    name: 'bubbleSort',
+    fn: bubbleSort,
+    stable: true
+  },
+  {
+    name: 'selectionSort',
+    fn: selectionSort,
+    stable: true
   }
 ];
 
