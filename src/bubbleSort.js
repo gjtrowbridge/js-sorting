@@ -42,4 +42,3 @@ var bubbleSort = function(toSort, comparisonFn) {
 
   return toSort;
 };
-
