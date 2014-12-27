@@ -14,6 +14,11 @@ var sortFns = [
     name: 'selectionSort',
     fn: selectionSort,
     stable: true
+  },
+  {
+    name: 'mergeSort',
+    fn: mergeSort,
+    stable: true
   }
 ];
 
