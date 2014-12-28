@@ -44,3 +44,4 @@ var insertionSort = function(toSort, comparisonFn) {
 
   return toSort;
 };
+

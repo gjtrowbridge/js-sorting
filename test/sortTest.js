@@ -19,6 +19,11 @@ var sortFns = [
     name: 'mergeSort',
     fn: mergeSort,
     stable: true
+  },
+  {
+    name: 'quickSort',
+    fn: quickSort,
+    stable: false
   }
 ];
 
@@ -92,6 +97,22 @@ for (var i=0; i<sortFns.length; i++) {
         expect(sorted).toEqual([
           { name: 'Bob', occupation: 'management consulting', number: 1 },
           { name: 'Bob', occupation: 'management consulting', number: 2 },
+          { name: 'Michael Bolton', occupation: 'disgruntled drone. not the singer.' },
+          { name: 'Peter Gibbons', occupation: 'disgruntled drone, management material' },
+        ]);
+
+        var toSort = [
+          { name: 'Peter Gibbons', occupation: 'disgruntled drone, management material' },
+          { name: 'Bob', occupation: 'management consulting', number: 2 },
+          { name: 'Michael Bolton', occupation: 'disgruntled drone. not the singer.' },
+          { name: 'Bob', occupation: 'management consulting', number: 1 },
+        ]
+        var sorted = sortFn(toSort, function(a, b) {
+          return a.name > b.name;
+        });
+        expect(sorted).toEqual([
+          { name: 'Bob', occupation: 'management consulting', number: 2 },
+          { name: 'Bob', occupation: 'management consulting', number: 1 },
           { name: 'Michael Bolton', occupation: 'disgruntled drone. not the singer.' },
           { name: 'Peter Gibbons', occupation: 'disgruntled drone, management material' },
         ]);
