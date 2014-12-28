@@ -52,7 +52,7 @@ var quickSort = function(toSort, comparisonFn) {
     toSort[hi] = toSort[swapIndex];
     toSort[swapIndex] = pivotValue;
 
-    //Recursively call quicksort on both sides
+    //Recursively call quickSort on both sides
     innerQuickSort(toSort, lo, swapIndex - 1);
     innerQuickSort(toSort, swapIndex + 1, hi);
   };
